@@ -140,6 +140,7 @@ Testala con l’array [2, 13, 7, 21, 19] .
 */
 
 //creo la funzione fetchjson per facilitarmi il lavoro e rendere il codice più snello, senza await perchè se no ottengo già la resolve
+/*
 async function fetchJson(url){
 	const response = await fetch(url);
 	const obj = response.json()
@@ -162,5 +163,27 @@ const promises = arr.map((e) => {
 }
 
 getBooks(endpoints);
+
+
+/*
+Snack 6 (Bonus) - Ordina i libri
+Crea una variabile booleana (areThereAvailableBooks) per verificare se c’è almeno un libro disponibile.
+Crea un array (booksByPrice) con gli elementi di books ordinati in base al prezzo (crescente).
+Ordina l’array booksByPricein base alla disponibilità (prima quelli disponibili), senza creare un nuovo array.
+*/
+let areThereAvailableBooks = console.log(books.some(b => b.available === true));
+
+
+const booksByPrice = books.map((b) => b)
+//Ho dovuto usare replace e trim per evitare problemi con il simbolo €, in quanto anche se stringa non potevo usare il localecomapre perchè non si tratta di ordinamento alfabetico.
+booksByPrice.sort((a,b) =>  Number(a.price.replace("€", "").trim()) - Number(b.price.replace("€", "").trim()))
+
+booksByPrice.sort((a,b) => {
+	return a.available === true - b.available === false 
+})
+console.log(booksByPrice)
+
+
+
 
 
