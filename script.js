@@ -112,7 +112,7 @@ Snack 4 - Calcola l’età media
 Creare un array (ages) che contiene le età degli autori dei libri.
 Calcola la somma delle età (agesSum) usando reduce.
 Stampa in console l’età media degli autori dei libri.
-*/
+
 
 const ages = books.map((b) => b.author.age);
 
@@ -123,4 +123,18 @@ console.log(agesSum);
 
 ageAvg = agesSum / ages.length;
 console.log(ageAvg)
+*/
 
+/*
+Snack 5 (Bonus) - Raccogli i libri
+Nota: a differenza di quanto visto finora negli esempi, per accedere all'API utilizzare utilizzare l'url base:
+https://boolean-spec-frontend.vercel.app/freetestapi
+al posto di:
+https://freetestapi.com/api/v1
+
+Ad esempio:
+https://boolean-spec-frontend.vercel.app/freetestapi/users
+per chiamare l'endpoint /users
+Usando la l'API https://boolean-spec-frontend.vercel.app/freetestapi/books/{id} usa la combinazione di .map() e Promise.all(), per creare una funzione (getBooks) che a partire da un array di id (ids), ritorna una promise che risolve un array di libri (books).
+Testala con l’array [2, 13, 7, 21, 19] .
+*/
